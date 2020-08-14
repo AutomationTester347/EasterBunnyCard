@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-08-14T14:49:43 BDT" name="Suite" finished-at="2020-08-14T14:50:43 BDT" duration-ms="60437">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.ebc.runner.TestRunner@71c3b41]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2020-08-14T14:49:43 BDT" name="Test" finished-at="2020-08-14T14:50:43 BDT" duration-ms="60437">
+      <class name="com.ebc.runner.TestRunner">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.ebc.runner.TestRunner@71c3b41]" started-at="2020-08-14T14:49:43 BDT" name="setUpClass" finished-at="2020-08-14T14:49:43 BDT" duration-ms="363" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.ebc.runner.TestRunner@71c3b41]" started-at="2020-08-14T14:49:43 BDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-08-14T14:50:14 BDT" duration-ms="30557" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify that user can register a new account by using signup form"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[As a new user, I can register a new account]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.ebc.runner.TestRunner@71c3b41]" started-at="2020-08-14T14:50:14 BDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-08-14T14:50:43 BDT" duration-ms="29338" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["This is test scenario"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[As a user, I can login with the valid credential]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Login button name mismatch, Expected: Log Out Actual: LOG IN expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Login button name mismatch, Expected: Log Out Actual: LOG IN expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.ebc.pageObects.myAccount.registeredUser.DashboardPage.verifyThePresenceOfDashboardPage(DashboardPage.java:25)
+at com.ebc.stepDefinations.CommonSteps.dashboardWithUsernameIsAppeared(CommonSteps.java:48)
+at ✽.dashboard with username is appeared(file:///C:/Users/Rashed/source/AutomationWithJava/javaProjects/EasterBunnyCard/src/test/resources/features/login.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.ebc.runner.TestRunner@71c3b41]" started-at="2020-08-14T14:50:43 BDT" name="tearDownClass" finished-at="2020-08-14T14:50:43 BDT" duration-ms="125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.ebc.runner.TestRunner -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
