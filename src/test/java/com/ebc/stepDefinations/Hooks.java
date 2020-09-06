@@ -1,5 +1,6 @@
 package com.ebc.stepDefinations;
 
+import com.ebc.configurations.Driver;
 import com.ebc.context.TestBase;
 import com.ebc.context.TestContext;
 import com.ebc.drivers.DriverFactory;
@@ -48,9 +49,10 @@ public class Hooks extends TestBase {
     }
 
     public void createDrive() throws IOException {
-        driver = new DriverFactory().createDriver(browser);
-        driver.manage().timeouts().pageLoadTimeout(timeOutSec, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(timeOutSec, TimeUnit.SECONDS);
+        Driver getDriver = config.getConfigDriver();
+        driver = new DriverFactory().createDriver(getDriver.getBrowser());
+        driver.manage().timeouts().pageLoadTimeout(getDriver.getTimeOutSecs(), TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(getDriver.getTimeOutSecs(), TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
         testContext.setDriver(driver);

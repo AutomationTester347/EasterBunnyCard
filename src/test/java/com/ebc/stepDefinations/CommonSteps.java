@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
+
 public class CommonSteps extends TestBase {
     TestContext testContext;
     Scenario scenario;
@@ -21,7 +22,7 @@ public class CommonSteps extends TestBase {
     @Given("home page is presented")
     public void homePageIsPresented() {
         testContext.initializePageObjectClasses();
-        testContext.getHomepage().navigateToHomePage(baseUrl);
+        testContext.getHomepage().navigateToHomePage(config.getConfigEnvironement().getUrl());
     }
 
     @Given("login page is presented")
@@ -34,7 +35,7 @@ public class CommonSteps extends TestBase {
     public void userFillupTheRegistrationFormWithValidInformation() {
         String userName = "RegUser" + getRandomString();
         String email = userName + "@ebc.com";
-        testContext.getLoginPage().fillupRegistrationForm(userName, email, password);
+        testContext.getLoginPage().fillupRegistrationForm(userName, email, config.getConfigUsers()[0].getPassword());
         testContext.setuserName(userName);
     }
 

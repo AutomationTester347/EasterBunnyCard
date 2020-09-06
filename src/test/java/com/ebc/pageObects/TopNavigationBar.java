@@ -11,6 +11,7 @@ public class TopNavigationBar extends Interact {
     private By loginButton = By.cssSelector(".top-nav-item .login-in");
     private By viewCartButton = By.cssSelector(".top-nav-item .et-cart-info");
     private By logOutButton = By.cssSelector(".top-nav-item >ul>li:last-child");
+    //private By orderNowButton = By.xpath()
 
     public TopNavigationBar(WebDriver driver, Scenario scenario) {
         setDriver(driver);

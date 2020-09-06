@@ -1,0 +1,28 @@
+{
+  "EBCTargetEnvironment": "DEV",
+  "TargetEnvironments": [
+    {
+      "Name": "DEV",
+      "Url": "https://www.easterbunnycard.com/"
+    },
+    {
+      "Name": "DEFAULT",
+      "Url": "https://www.easterbunnycard.com/"
+    }
+  ],
+
+  "Driver": {
+    "Remote": false,
+    "Browser": "chrome",
+    "Platform": "windows",
+    "TimeOutSecs": 180
+  },
+
+  "Users": [
+    {
+      "UserType": "GeneralUser",
+      "UserName": "qatester347@gmail.com",
+      "PassWord": "one_2_three"
+    }
+  ]
+}
