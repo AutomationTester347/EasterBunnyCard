@@ -1,7 +1,6 @@
 package com.ebc.context;
 
-import com.ebc.pageObects.Homepage;
-import com.ebc.pageObects.TopNavigationBar;
+import com.ebc.pageObects.*;
 import com.ebc.pageObects.myAccount.guestUser.LoginPage;
 import com.ebc.pageObects.myAccount.registeredUser.DashboardPage;
 import io.cucumber.java.Scenario;
@@ -16,6 +15,9 @@ public class TestContext {
     private Homepage homepage;
     private LoginPage loginPage;
     private DashboardPage dashboardPage;
+    private EasterBunnyVideoCardPage easterBunnyVideoCardPage;
+    private CartPage cartPage;
+    private CheckoutPage checkoutPage;
 
     public WebDriver getDriver() {
         return driver;
@@ -49,6 +51,18 @@ public class TestContext {
         return dashboardPage;
     }
 
+    public EasterBunnyVideoCardPage getEasterBunnyVideoCardPage() {
+        return easterBunnyVideoCardPage;
+    }
+
+    public CartPage getCartPage() {
+        return cartPage;
+    }
+
+    public CheckoutPage getCheckoutPage() {
+        return checkoutPage;
+    }
+
     public String getUserName() {
         return userName;
     }
@@ -62,5 +76,8 @@ public class TestContext {
         homepage = new Homepage(driver, scenario);
         loginPage = new LoginPage(driver, scenario);
         dashboardPage = new DashboardPage(driver, scenario);
+        easterBunnyVideoCardPage = new EasterBunnyVideoCardPage(driver, scenario);
+        cartPage = new CartPage(driver, scenario);
+        checkoutPage = new CheckoutPage(driver, scenario);
     }
 }

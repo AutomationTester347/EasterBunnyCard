@@ -8,11 +8,11 @@ public class NGTestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
+
     }
 
     @Override
@@ -21,10 +21,12 @@ public class NGTestListener implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
+
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+
     }
 
     @Override
@@ -34,12 +36,12 @@ public class NGTestListener implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        System.out.println("test ng onStart");
+
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        System.out.println("test ng onFinish");
+
     }
 
 }

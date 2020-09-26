@@ -6,10 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Homepage extends TopNavigationBar {
 
-    private final String HOME_PAGE_TITLE = "Home - Easter Bunny Card";
-    private final String HOME_PAGE_HEADER_TEXT = "Personal Easter Greetings with Mr Bunny video messages!";
-
-    private By homePageHeaderElement = By.cssSelector("h2[class$=module_header]");
+    By cookieBar = By.cssSelector("div#cookie-law-info-bar");
 
     public Homepage(WebDriver driver, Scenario scenario) {
         super(driver, scenario);
@@ -17,12 +14,18 @@ public class Homepage extends TopNavigationBar {
 
     public void navigateToHomePage(String url) {
         navigateToPage(url);
-        scenario.log("Navigated to home page");
-        verifyThePresenceOfHomePage();
+        getScenario().log("Navigated to home page");
     }
 
-    public void verifyThePresenceOfHomePage() {
-        verifyThePage(HOME_PAGE_TITLE, homePageHeaderElement, HOME_PAGE_HEADER_TEXT);
+    public void verifyThePresenceOfThePage(String pageTitle, String firstHeader) {
+        WaitForPageLoad();
+        waitForTheSpinnerToBeInvisible();
+
+        if (isElementVisibleAfterWait(cookieBar, 2)) {
+            clickElement(findElement(By.cssSelector(".cookie_action_close_header")));
+        }
+
+        verifyThePage(pageTitle, firstHeader);
     }
 
 }

@@ -8,16 +8,8 @@ import org.testng.Assert;
 
 public class MyAccountPage extends TopNavigationBar {
 
-    private final String MY_ACCOUNT_PAGE_TITLE = "My account - Easter Bunny Card";
-    private final String MY_ACCOUNT_PAGE_HEADER_TEXT = "My Account.";
-
-    private By myAccountPageHeaderElement = By.xpath("//h1[text()='My Account.']");
-
     public MyAccountPage(WebDriver driver, Scenario scenario) {
         super(driver, scenario);
     }
 
-    public void verifyThePresenceOfMyAccountPage(){
-        verifyThePage(MY_ACCOUNT_PAGE_TITLE, myAccountPageHeaderElement, MY_ACCOUNT_PAGE_HEADER_TEXT);
-    }
 }

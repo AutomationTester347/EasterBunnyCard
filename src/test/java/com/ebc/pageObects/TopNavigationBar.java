@@ -4,35 +4,38 @@ import com.ebc.utils.Interact;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class TopNavigationBar extends Interact {
-    public Scenario scenario;
-
-    private By loginButton = By.cssSelector(".top-nav-item .login-in");
-    private By viewCartButton = By.cssSelector(".top-nav-item .et-cart-info");
-    private By logOutButton = By.cssSelector(".top-nav-item >ul>li:last-child");
-    //private By orderNowButton = By.xpath()
 
     public TopNavigationBar(WebDriver driver, Scenario scenario) {
         setDriver(driver);
         setScenario(scenario);
-        this.scenario = scenario;
+    }
+
+    private WebElement getLoginButton() {
+        return findElement(By.cssSelector(".top-nav-item .login-in"));
+    }
+
+    private WebElement getViewCartButton() {
+        return findElement(By.cssSelector(".top-nav-item .et-cart-info"));
+    }
+
+    public WebElement getLogOutButton() {
+        return findElement(By.cssSelector(".top-nav-item >ul>li:last-child"));
+    }
+
+    private WebElement getOrderNowButton() {
+        return findElement(By.xpath("//ul[@id='top-menu']//span[text()='Order Now']"));
     }
 
     public void clickOnloginButton() {
-        clickElement(loginButton);
-        scenario.log("clicked login Button");
+        clickElement(getLoginButton());
+        getScenario().log("clicked login Button");
     }
 
-    public By getLoginButton() {
-        return loginButton;
-    }
-
-    public By getViewCartButton() {
-        return viewCartButton;
-    }
-
-    public By getLogOutButton() {
-        return logOutButton;
+    public void clickOnOrderNowButton() {
+        clickElement(getOrderNowButton());
+        getScenario().log("clicked orderNow button");
     }
 }

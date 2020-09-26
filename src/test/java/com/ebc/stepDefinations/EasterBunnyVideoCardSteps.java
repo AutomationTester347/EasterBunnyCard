@@ -1,36 +1,27 @@
 package com.ebc.stepDefinations;
 
+import com.ebc.context.TestContext;
+import com.ebc.pageObects.EasterBunnyVideoCardPage;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.List;
+import java.util.Map;
+
 public class EasterBunnyVideoCardSteps {
 
-    @Given("Easter Bunny Video Card page is presented")
-    public void easterBunnyVideoCardPageIsPresented() throws Throwable {
+    TestContext testContext;
+    Scenario scenario;
+    EasterBunnyVideoCardPage easterBunnyVideoCardPage;
 
-    }
-
-    @When("I select religious message type as {string}")
-    public void iSelectReligiousMessageTypeAs(String arg0) {
-
-    }
-
-    @When("I select the recipient name as {string}")
-    public void iSelectTheRecipientNameAs(String arg0) {
-    }
-
-    @When("I select special shout outs as {string}")
-    public void iSelectSpecialShoutOutsAs(String arg0) {
-    }
-
-    @And("I Click on the {string} button")
-    public void iClickOnTheButton(String arg0) {
-    }
-
-    @Then("I confirm the presence of order in cart page")
-    public void iConfirmThePresenceOfOrderInCartPage() {
+    public EasterBunnyVideoCardSteps(TestContext testContext) {
+        this.testContext = testContext;
+        this.scenario = testContext.getScenario();
+        this.easterBunnyVideoCardPage = testContext.getEasterBunnyVideoCardPage();
     }
 
     @Then("I remove the order")
@@ -39,5 +30,11 @@ public class EasterBunnyVideoCardSteps {
 
     @And("I confirm that order has been removed from the cart")
     public void iConfirmThatOrderHasBeenRemovedFromTheCart() {
+    }
+
+    @When("I fill custom order form with the following information")
+    public void iFillCustomOrderFormWithTheFollowingInformation(DataTable dataTable) throws Exception {
+        List<Map<String, String>> table = dataTable.asMaps(String.class, String.class);
+        easterBunnyVideoCardPage.fillupCustomOrderForm(table);
     }
 }

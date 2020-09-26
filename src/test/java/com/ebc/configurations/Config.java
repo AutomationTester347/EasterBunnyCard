@@ -16,7 +16,7 @@ public class Config {
     private EbcUser[] configUsers;
 
     //Because this is static it will be executed at the start of any test run.
-    //Reads the keys from the app.config and assigns them to the properties declared above.
+    //Reads the keys from the config and assigns them to the properties declared above.
     protected Config() throws IOException, URISyntaxException {
         String fileName = "config.json";
 

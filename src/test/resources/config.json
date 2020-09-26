@@ -10,14 +10,12 @@
       "Url": "https://www.easterbunnycard.com/"
     }
   ],
-
   "Driver": {
     "Remote": false,
-    "Browser": "chrome",
+    "Browser": "Chrome",
     "Platform": "windows",
-    "TimeOutSecs": 180
+    "TimeOutSecs": 60
   },
-
   "Users": [
     {
       "UserType": "GeneralUser",
