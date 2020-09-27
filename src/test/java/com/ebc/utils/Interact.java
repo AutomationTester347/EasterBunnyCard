@@ -161,7 +161,7 @@ public class Interact {
         List<WebElement> elements = driver.findElements(By.cssSelector(".blockUI.blockElement"));
 
         if (elements.size() != 0) {
-            WebDriverWait wait = new WebDriverWait(driver, 10);
+            WebDriverWait wait = new WebDriverWait(driver, 60);
             wait.until(ExpectedConditions.invisibilityOfAllElements(elements));
         }
     }

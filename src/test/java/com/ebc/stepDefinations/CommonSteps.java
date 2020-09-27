@@ -54,6 +54,7 @@ public class CommonSteps extends TestBase {
     @And("I click on the {string} button")
     public void iClickOnTheButton(String buttonName) {
         testContext.getHomepage().clickButton(buttonName);
+        testContext.getHomepage().waitForTheSpinnerToBeInvisible();
     }
 
     @Then("dashboard with username is appeared")
