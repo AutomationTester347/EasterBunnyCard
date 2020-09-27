@@ -51,7 +51,7 @@ public class Config {
             environmentParameter = "DEFAULT";
 
         String finalEnvironmentParameter = environmentParameter;
-        var environment = Arrays.stream(root.getTargetEnvironments())
+        TargetEnvironment environment = Arrays.stream(root.getTargetEnvironments())
                 .filter(x -> x.getName().equals(finalEnvironmentParameter))
                 .findFirst().orElse(null);
 
