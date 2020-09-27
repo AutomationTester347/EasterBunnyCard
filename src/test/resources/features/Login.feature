@@ -1,5 +1,4 @@
-Feature: As a user, I can login with the valid credential
-  so that I can access the Easter Bunny Card as a registered user
+Feature: As a user, I can login with the valid credential so that I can access the Easter Bunny Card as a registered user
 
   @AutoTest @Test-001
   Scenario: Verify that user can login with valid credential

@@ -48,7 +48,8 @@ public class Interact {
     }
 
     public WebElement clickElement(WebElement element) {
-        element.click();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
         return element;
     }
 
@@ -167,7 +168,7 @@ public class Interact {
     }
 
     public void WaitForPageLoad() {
-        var wait = new WebDriverWait(driver, 120);
+        WebDriverWait wait = new WebDriverWait(driver, 120);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body")));
     }
 
